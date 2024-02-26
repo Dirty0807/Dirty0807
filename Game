@@ -1,0 +1,1009 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Base</title>
+  <style>
+
+
+body {
+  background-color: black;
+  margin: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: pan 20s linear infinite;
+  width:700px;
+}
+
+@keyframes pan {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+#attack-right{color: red;
+  font-size: 70px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+#attack-left{color: red;
+  font-size: 70px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+h3 {
+  color: red;
+  font-size: 90px;
+  position: fixed;
+  top: 8%;
+  left: 70%;
+  transform: translateX(-50%);
+  z-index: 9999;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+}
+
+h2 {
+  color: red;
+  font-size: 90px;
+  position: fixed;
+  top: 8%;
+  left: 30%;
+  transform: translateX(-50%);
+  z-index: 9999;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+}
+
+.file-uploader-left {
+  display: block;
+  margin-top: 20px;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+}
+
+.file-uploader-right {
+  display: block;
+  margin-top: 20px;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+
+#file-input-middle {
+  display: block;
+  margin-top: 20px;
+  position: fixed;
+  top: 20px;
+  left: 450px;
+}
+
+
+#iframe-container {
+  display: flex;
+  height: 100vh;
+  top:90px;
+  left:50px;
+  width:130%;
+}
+
+.iframe-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.iframe-wrapper iframe {
+  width: 800px;
+  height: 100%;
+  border: none;
+
+
+}
+
+
+
+
+
+
+#film {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: clear;
+  
+  z-index: 9999;
+  display: none;
+  opacity: 30%;
+}
+
+#winner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: red;
+  text-align: center;
+}
+
+/* CSS for screen shake effect */
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-5px, 5px) rotate(-5deg); }
+  20%, 40%, 60%, 80% { transform: translate(5px, -5px) rotate(5deg); }
+  100% { transform: translate(0, 0); }
+}
+
+.shake {
+  animation: shake 0.5s infinite;
+}
+
+ p {
+      position: fixed;
+
+      color: white;
+      font-size: 100px;
+      top: 50%;
+      left: 3%;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 red;
+      z-index: 9000;
+      display: none;
+    }
+    .power{color: red;
+  font-size: 90px;
+  position: fixed;
+  top: 8%;
+  left: 40%;
+  transform: translateX(-50%);
+  z-index: 9999;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+}
+
+
+ #skip {
+      position: fixed;
+      width: 10%;
+      color: white;
+      background-color: black;
+      font-size: 60px;
+      top: 90%;
+      left: 3%;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 red;
+      z-index: 9000;
+
+    }
+
+
+   #file-content {
+     width: 200px;
+     height: 600px;
+
+
+     border-radius: 10px;
+     padding: 10px;
+     right: -200px;
+     top:-550px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     font-family: Arial, sans-serif;
+     font-size: 16px;
+     position: relative;
+     z-index: 9999
+   }
+
+   #file-iframe{  height: 900px;
+     width: 300px;
+
+   }
+
+
+.img{  z-index: 9999;
+  color: green;
+  font-size: 80px;
+  position: fixed;
+  bottom: 50%;
+  left: 10%;
+  display:none ;}
+
+
+
+#ias {
+  z-index: 9999;
+  width: 800px;
+  height: 1800px;
+  color: green;
+  font-size: 80px;
+  position: fixed;
+  bottom: -10%;
+  left: 11%;
+  display: none;
+
+  opacity: 100%;
+}
+
+
+@keyframes shakeAndBounce {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1.6);
+  }
+  75% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shakeAndBounce {
+  animation: shakeAndBounce 0.5s infinite;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+  .picture {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(9, 0, 8, 0.8);
+    z-index: 9999;
+    text-align: center;
+    padding-top: 200px;
+    font-size: 24px;
+    color: white;
+  }
+
+
+
+
+
+  /* Styles for the winner element */
+  #winner {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  /* Styles for the count element */
+  #win-count {
+   color: red;
+    font-size: 60px;
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+
+  }
+   #table {
+            color: red;
+            outline-color: red;
+            background-color: blue;
+            height: 100px;
+            width: 80px;
+            position: absolute;
+            top: 75%;
+            left: 30%;
+            z-index: 9999;
+            display: none; /* Initially hidden */
+        }
+        #menuButton{height: 40px;
+          width: 40px;
+          position: absolute;
+          top: 80%;
+          left: 30%;
+          z-index: 9999;
+        }
+
+</style>
+
+
+  </style>
+</head>
+<body >
+
+  <div id="iframe-container">
+    <!-- Left iframe -->
+    <div class="iframe-wrapper">
+      <iframe id="left-iframe"></iframe>
+    </div>
+
+    <!-- Right iframe -->
+    <div class="iframe-wrapper">
+      <iframe id="right-iframe"></iframe>
+    </div>
+  </div>
+    <div id="table">
+
+
+    <iframe id="uploadFrame" name="uploadFrame" ></iframe>
+
+
+</body>
+</html>
+
+</div>
+   <button id="menuButton">Menu</button>
+  <h2 id="hp-left"></h2>
+  <h3 id="hp-right"></h3>
+  <p onclick="playSongOnHTMLUpload()"  >  終わりのない戦い
+  </p>
+
+<button id="skip" onclick="skipToNextSong()">スキップ</button>
+
+  <h2 id="attack-left"></h2>
+  <h3 id="attack-right"></h3>
+<div id="film">
+
+</div>
+<div id="win-count"></div>
+
+<div id="winner"></div>
+<p id="power"> </p>
+  <input type="file" id="file-input-right" class="file-uploader-right">
+
+  <input type="file" id="file-input-left" class="file-uploader-left">
+
+
+
+<img id= "ias" src="https://media0.giphy.com/media/olImWWIYASCgxFORw1/giphy.gif?cid=790b7611bezl0dx4nv2pc5k2p8yrupd5cfbuzwf43mg6c2pt&ep=v1_gifs_search&rid=giphy.gif&ct=s" alt="iron">
+
+
+
+
+
+
+  <script>
+
+
+let hpValue = 0;
+const hpLeftElement = document.getElementById("hp-left");
+const hpRightElement = document.getElementById("hp-right");
+
+var attackLeftElement = document.getElementById("attack-left");
+var attackRightElement = document.getElementById("attack-right");
+
+
+// Variable to keep track of the last attacker
+var lastAttacker = null;
+
+
+
+
+// Function to update HP
+function updateHP(side, hp) {
+  if (side === "left") {
+    hpLeftElement.innerHTML = hp;
+    if (hp <= 0) {
+      attackLeftElement.disabled = true; // Disable attack button if HP is less than or equal to 0
+    }
+  } else if (side === "right") {
+    hpRightElement.innerHTML = hp;
+    if (hp <= 0) {
+      attackRightElement.disabled = true; // Disable attack button if HP is less than or equal to 0
+    }
+  }
+}
+
+
+
+
+
+
+// Function to load uploaded file content into the right iframe
+function loadFileContent(file) {
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    var fileContents = event.target.result;
+    var iframeElement = document.getElementById("right-iframe");
+    iframeElement.srcdoc = fileContents;
+
+    var hp = extractHPFromFileContents(fileContents);
+    updateHP(hpRightElement, hp);
+  };
+  reader.readAsText(file);
+}
+
+
+
+
+
+
+// Event listener for the right file uploader
+var fileInputRight = document.getElementById("file-input-right");
+
+fileInputRight.addEventListener("change", function(event) {
+  if (lastAttacker !== "right") { // Check if last attacker was not "right"
+    var file = event.target.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+      var fileContents = event.target.result;
+      var hp = extractHPFromFileContents(fileContents);
+      updateHP("right", hp);
+      displayHTMLContent("right", fileContents);
+      lastAttacker = "right"; // Set last attacker to "right"
+
+
+    };
+
+    reader.readAsText(file);
+  }
+});
+
+
+
+
+
+
+
+
+
+// Event listener for the right file uploader
+var fileInputLeft = document.getElementById("file-input-left");
+
+fileInputLeft.addEventListener("change", function(event) {
+  if (lastAttacker !== "left") { // Check if last attacker was not "left"
+    var file = event.target.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+      var fileContents = event.target.result;
+      var hp = extractHPFromFileContents(fileContents);
+      updateHP("left", hp);
+      displayHTMLContent("left", fileContents);
+      lastAttacker = "left"; // Set last attacker to "left"
+    };
+
+    reader.readAsText(file);
+  }
+});
+
+
+
+
+
+
+
+
+// Function to load uploaded file content into the left iframe
+function loadFileContentLeft(file) {
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    var fileContents = event.target.result;
+    var iframeElement = document.getElementById("left-iframe");
+    iframeElement.srcdoc = fileContents;
+
+    var hp = extractHPFromFileContents(fileContents);
+    updateHP(hpLeftElement, hp);
+  };
+  reader.readAsText(file);
+}
+
+
+
+
+
+
+
+// Event listener for checking if HP goes to 0 or below
+window.addEventListener("message", function(event) {
+  if (typeof event.data === "number") {
+    var receivedAttackValue = event.data;
+    var source = getSource(event);
+
+    if (source === "left") {
+      var currentRightHP = parseInt(hpRightElement.innerHTML);
+      var newRightHP = currentRightHP - receivedAttackValue;
+      hpRightElement.innerHTML = newRightHP;
+      if (newRightHP <= 0) {
+        console.log("Right Man Died 😰");
+
+
+      }
+    } else if (source === "right") {
+      var currentLeftHP = parseInt(hpLeftElement.innerHTML);
+      var newLeftHP = currentLeftHP - receivedAttackValue;
+      hpLeftElement.innerHTML = newLeftHP;
+      if (newLeftHP <= 0) {
+        console.log("Left Man Died 🥶");
+
+
+      }
+    }
+
+    console.log("Attack from", source, ". Attack value:", receivedAttackValue);
+  }
+});
+
+function playSound() {
+  var audio = new Audio("https://www.myinstants.com/media/sounds/themaideninblacksblessinghighqualityzilsesi.mp3"); // Replace "path/to/sound.mp3" with the actual path to your sound file
+  audio.play();
+}
+
+function playSound2() {
+  var audio = new Audio("https://www.myinstants.com/media/sounds/mortal-kombat-laugh.mp3"); // Replace "path/to/sound.mp3" with the actual path to your sound file
+  audio.play();
+}
+
+
+
+function playSound3() {
+  var audio = new Audio("https://www.myinstants.com/media/sounds/ssj2-power-up-short.mp3"); // Replace "path/to/sound.mp3" with the actual path to your sound file
+  audio.play();
+}
+
+
+
+
+// Function to simulate screen shake
+function shakeScreen(intensity,iframe) {
+  // Calculate the duration based on the attack value
+  var duration = intensity * 6; // Adjust as needed
+
+  // Add .shake class to start animation
+  document.body.classList.add("shake");
+
+  // Remove .shake class after specified duration
+  setTimeout(function() {
+    document.body.classList.remove("shake");
+  }, duration); // Use the calculated duration
+}
+
+
+
+
+
+// Function to handle attack event
+function handleAttackEvent(event) {
+  if (typeof event.data === "number") {
+    var receivedAttackValue = event.data;
+    var source = getSource(event);
+
+    if (source === "left") {
+      var currentRightHP = parseInt(hpRightElement.innerHTML);
+      var newRightHP = currentRightHP - receivedAttackValue;
+      hpRightElement.innerHTML = newRightHP;
+      if (receivedAttackValue >= 130) {
+        handleHPUpdate("left");
+
+      }
+          if (receivedAttackValue <= 0) {
+            window.frames[1].postMessage("miss", "*");
+
+          }
+      if (newRightHP <= 0) {
+        console.log("Right HP Died 😰");
+        showFilm("right");
+        displayImage("left");
+        window.frames[1].postMessage("DOA", "*");
+      }  else {
+         console.log("ouch!");
+         // Add a delay of 2 seconds before sending the "ouch!" message
+         setTimeout(function() {
+           window.frames[1].postMessage("ouch!", "*");
+
+         }, 1400); // 1000 milliseconds = 2 seconds
+       }
+
+    } else if (source === "right") {
+      var currentLeftHP = parseInt(hpLeftElement.innerHTML);
+      var newLeftHP = currentLeftHP - receivedAttackValue;
+      hpLeftElement.innerHTML = newLeftHP;
+      if (receivedAttackValue >= 130) {
+        handleHPUpdate("right");
+
+      }
+      if (receivedAttackValue <= 0) {
+        window.frames[0].postMessage("miss", "*");
+
+      }
+      if (newLeftHP <= 0) {
+        console.log("Left HP Died 🥶");
+        showFilm("left");
+        displayImage("right");
+
+           window.frames[0].postMessage("DOA", "*");
+
+      }  else {
+         console.log("ouch!");
+         // Add a delay of 2 seconds before sending the "ouch!" message
+         setTimeout(function() {
+           window.frames[0].postMessage("ouch!", "*");
+
+         }, 1300); // 2000 milliseconds = 2 seconds
+       }
+
+    }
+    console.log("Attack from", source, ". Attack value:", receivedAttackValue);
+  }
+}
+
+
+// Function to handle the message event
+function handleMessageEvent(event) {
+  if (typeof event.data === "object" && event.data.side && event.data.attackValue) {
+    var side = event.data.side;
+    var attackValue = event.data.attackValue;
+    handleAttackBySide(side, attackValue);
+  }
+}
+
+// Event listener to handle message events
+window.addEventListener("message", handleMessageEvent);
+
+
+
+// Function to handle HP update
+function handleHPUpdate(attacker, attackValue) {
+  var oppositeIframe = attacker === "left" ? window.frames[1] : window.frames[0];
+  var imageArray = [
+    "https://png.pngtree.com/png-clipart/20230613/ourmid/pngtree-distress-or-dirt-and-damage-effect-concept-png-image_7117673.png",
+   "https://www.freeiconspng.com/uploads/blood-png-1.png",
+    "https://www.freeiconspng.com/thumbs/wound-png/blood-clip-art-image-bloodstain-pattern-analysis-drawing-illustration-15.png",
+    "https://www.freeiconspng.com/uploads/blood-transparent-8.png",
+    "https://www.freeiconspng.com/uploads/broken-glass-png-4.png",
+
+    "https://www.freeiconspng.com/uploads/blood-png-3.png",
+
+    "https://www.freeiconspng.com/uploads/wound-image-gunshot-wound-transparency--2.png",
+
+    "https://www.freeiconspng.com/uploads/blood-png-12.png",
+  ]; // Replace with the paths to your images
+
+  var randomImage = imageArray[Math.floor(Math.random() * imageArray.length)];
+
+  var imageElement = document.createElement("img");
+  imageElement.src = randomImage;
+  imageElement.style.position = "fixed";
+
+  // Set random coordinates for the image within the top half of the opposite iframe
+  var maxLeft = oppositeIframe.innerWidth - imageElement.width;
+  var maxTop = oppositeIframe.innerHeight / 2 - imageElement.height;
+
+  imageElement.style.left = Math.floor(Math.random() * maxLeft) + "px";
+  imageElement.style.top = Math.floor(Math.random() * maxTop) + "px";
+
+  // Make the image smaller
+  imageElement.style.width = "200px";
+
+  // Add opacity to the image
+  imageElement.style.opacity = "0.9";
+
+  oppositeIframe.document.body.appendChild(imageElement);
+}
+function sendMessageToChild(message, remainingHP) {
+  // Replace this with your code to send the message to the child
+  postMessage({ message: message, remainingHP: remainingHP });
+  console.log("Sending message to child:", message);
+  console.log("Remaining HP:", remainingHP);
+}
+// Event listener for checking if HP goes to 0 or below
+window.addEventListener("message", handleAttackEvent);
+
+// Event listener for shaking the screen on any attack
+window.addEventListener("message", function(event) {
+  if (typeof event.data === "number") {
+    var receivedAttackValue = event.data;
+    shakeScreen(receivedAttackValue);
+  }
+});
+
+
+
+// Retrieve the win counts from session storage if available
+var leftPlayerWins = parseInt(sessionStorage.getItem("leftPlayerWins")) || 0;
+var rightPlayerWins = parseInt(sessionStorage.getItem("rightPlayerWins")) || 0;
+
+// Function to show the film when a player's HP reaches 0
+function showFilm(side) {
+  var filmElement = document.getElementById("film");
+  var winnerElement = document.getElementById("winner");
+
+  var leftPlayerNameElement = document.getElementById("left-player");
+  var rightPlayerNameElement = document.getElementById("right-player");
+
+  var leftPlayerName = leftPlayerNameElement ? leftPlayerNameElement.textContent : "Left Player";
+  var rightPlayerName = rightPlayerNameElement ? rightPlayerNameElement.textContent : "Right Player";
+
+  if (side === "left") {
+    winnerElement.innerHTML = rightPlayerName + " Wins!";
+    updateAndDisplayWinCounts("left");
+  } else if (side === "right") {
+    winnerElement.innerHTML = leftPlayerName + " Wins!";
+    updateAndDisplayWinCounts("right");
+  }
+
+  filmElement.style.display = "block";
+
+  // Redirect to different pages after 10 seconds
+  setTimeout(function() {
+    if (side === "left") {
+      window.location.href = "scene.html";
+    } else if (side === "right") {
+      window.location.href = "scene.html";
+    }
+  }, 10000); // 10 seconds in milliseconds
+}
+
+// Function to update and display win counts
+function updateAndDisplayWinCounts(side) {
+    // Retrieve the win counts from session storage
+    var leftPlayerWins = parseInt(sessionStorage.getItem("leftPlayerWins")) || 0;
+    var rightPlayerWins = parseInt(sessionStorage.getItem("rightPlayerWins")) || 0;
+
+    // Update the win count for the respective player
+    if (side === "left") {
+        leftPlayerWins++;
+    } else if (side === "right") {
+        rightPlayerWins++;
+    }
+
+    // Update the win counts in the session storage
+    sessionStorage.setItem("leftPlayerWins", leftPlayerWins);
+    sessionStorage.setItem("rightPlayerWins", rightPlayerWins);
+
+    // Display the counts on the screen
+    var countElement = document.getElementById("win-count");
+    if (countElement) {
+        countElement.innerHTML = "right Player Wins: " + leftPlayerWins + "<br>left Player Wins: " + rightPlayerWins;
+    }
+}
+
+// Call updateAndDisplayWinCounts to update and display the win counts when a player wins
+// Update for the respective player based on the game outcome
+// You can call updateAndDisplayWinCounts("left") or updateAndDisplayWinCounts("right") accordingly
+
+
+// Extract HP value from file contents
+function extractHPFromFileContents(fileContents) {
+  var parser = new DOMParser();
+  var doc = parser.parseFromString(fileContents, "text/html");
+  var hpElement = doc.querySelector("#hp");
+  var hp = 0;
+  if (hpElement) {
+    hp = parseInt(hpElement.innerHTML);
+  }
+  return hp;
+
+}
+
+
+function displayHTMLContent(side, fileContents) {
+  var iframeId = side === "left" ? "left-iframe" : "right-iframe";
+  var iframe = document.getElementById(iframeId);
+  var iframeDoc = iframe.contentWindow.document;
+  iframeDoc.open();
+  iframeDoc.write(fileContents);
+  iframeDoc.close();
+}
+
+function getSource(event) {
+  var leftIframe = document.getElementById("left-iframe").contentWindow;
+  var rightIframe = document.getElementById("right-iframe").contentWindow;
+
+  var source = null;
+
+  // Check if the event originated from leftIframe
+  if (event.source === leftIframe) {
+    source = "left"; // set the source to "left" if it came from leftIframe
+    healPlayerAndDisplayImage("left")
+    healPlayer("left")
+  }
+
+  // Check if the event originated from rightIframe
+  if (event.source === rightIframe) {
+    source = "right"; // set the source to "right" if it came from rightIframe
+    healPlayerAndDisplayImage("right")
+    healPlayer("right")
+  }
+
+  // Return the source or "unknown"
+  return source ? source : "unknown";
+}
+
+
+var songList = [
+   "https://epsilon.vgmsite.com/soundtracks/battle-fantasy-genesis/kvolskks/22-Battle%20Fantasy.mp3",
+      "https://www.chosic.com/wp-content/uploads/2022/10/scott-buckley-moonlight(chosic.com).mp3",
+         "https://www.chosic.com/wp-content/uploads/2022/09/HEROICCC(chosic.com).mp3",
+            "https://www.chosic.com/wp-content/uploads/2023/11/PhaseShift(chosic.com).mp3",
+               "https://www.chosic.com/wp-content/uploads/2024/01/Infinite-World-chosic.com_.mp3",
+                  "https://www.chosic.com/wp-content/uploads/2024/02/Valetines-Day(chosic.com).mp3",
+                     "https://www.chosic.com/wp-content/uploads/2022/10/Memories-of-Spring(chosic.com).mp3"
+];
+
+var currentSongIndex = 0;
+var myAudio = new Audio(songList[currentSongIndex]);
+
+function playSongOnHTMLUpload() {
+  myAudio.play();
+  // Add any specific logic or sound when the HTML is uploaded
+}
+
+
+
+
+
+function playNextSong() {
+  currentSongIndex = (currentSongIndex + 1) % songList.length; // Move to the next song cyclically
+  myAudio.pause(); // Pause the current audio
+  myAudio = new Audio(songList[currentSongIndex]); // Create a new Audio object for the next song
+  myAudio.play(); // Play the new audio
+}
+
+function skipToNextSong() {
+  playNextSong();
+}
+
+myAudio.addEventListener('ended', playNextSong);
+
+
+
+
+
+function healPlayerAndDisplayImage() {
+  var currentPlayerHPLeft = parseInt(hpLeftElement.innerHTML);
+  var currentPlayerHPRight = parseInt(hpRightElement.innerHTML);
+
+  if (currentPlayerHPLeft >= 1 && currentPlayerHPLeft <= 10) {
+    var healedHPLeft = currentPlayerHPLeft + 600;
+    hpLeftElement.innerHTML = healedHPLeft;
+    console.log("Left Player Healed! HP:", healedHPLeft);
+    displayImage();
+    playSound3();
+  } else {
+    console.log("Invalid HP value for healing (Left Player).");
+
+  }
+
+  if (currentPlayerHPRight >= 1 && currentPlayerHPRight <= 10) {
+    var healedHPRight = currentPlayerHPRight + 600;
+    hpRightElement.innerHTML = healedHPRight;
+    console.log("Right Player Healed! HP:", healedHPRight);
+    displayImage();
+    playSound3();
+  } else {
+    console.log("Invalid HP value for healing (Right Player).");
+  }
+}
+
+// Function to display an image for 4 seconds
+function displayImage() {
+  // Assuming there is an HTML element with the ID "imageElement" to display the image
+  var imageElement = document.getElementById("ias");
+  imageElement.style.display = "block";
+
+  // Set a timeout to hide the image after 4 seconds
+  setTimeout(function() {
+    imageElement.style.display = "none";
+  }, 4000);
+}
+
+
+const backgrounds = [
+  "url('https://public-files.gumroad.com/ko2jodat1p9no8oq529lp2isuj43')",
+  "url('https://public-files.gumroad.com/jkpa3buvzv9sz69fjw61u19tu3rm')",
+  "url('https://public-files.gumroad.com/kkcl378uiiad35uieha00k1u775m')",
+  "url(https://public-files.gumroad.com/n73wvmdd5yyp5mcrqo3is5t6kx5w)",
+"url(https://public-files.gumroad.com/hoaq5ua0rhgl12gmsfjc5axgur5f)",
+"url(https://public-files.gumroad.com/31f4gdonikzyeunxvtxxbyb0w6xt)",
+"url(https://public-files.gumroad.com/d8cn5ppgcbbi1hzncnql02kuknrx)",
+"url(https://public-files.gumroad.com/unmmhlg6qf90qf1t6z9vpzkzqv0f)",
+"url(https://public-files.gumroad.com/a89053i2108lzuu7tqk118l4v3sq)",
+"url(https://public-files.gumroad.com/aud3cy7rlguz0jhpeo0kuyy05psd)",
+"url(https://public-files.gumroad.com/g7n38nnelz9lnytb2l58ooyn2rtn)",
+"url(https://public-files.gumroad.com/2eyx791800j120dag92tdp1yvggy)",
+"url(https://public-files.gumroad.com/pbnnv21jsesg9dtmiy825v5d2dei)",
+  // Add more background URLs here
+];
+
+function getRandomBackground() {
+  const randomIndex = Math.floor(Math.random() * backgrounds.length);
+  return backgrounds[randomIndex];
+}
+
+function setRandomBackground() {
+  const randomBackground = getRandomBackground();
+  document.body.style.backgroundImage = randomBackground;
+}
+
+setRandomBackground(); // Set random background on startup
+
+
+
+
+function healPlayer() {
+  var currentPlayerHPLeft = parseInt(hpLeftElement.innerHTML);
+  var currentPlayerHPRight = parseInt(hpRightElement.innerHTML);
+
+  var hpToHeal = [9999,8888,7777,6666,5555,4444,3333,2222,1111,999, 888, 777, 666, 555, 444, 333, 222, 111, 1];
+
+  if (hpToHeal.includes(currentPlayerHPLeft)) {
+    var healedHPLeft = currentPlayerHPLeft + 2500;
+    hpLeftElement.innerHTML = healedHPLeft;
+    console.log("Left Player Healed! HP:", healedHPLeft);
+    displayImage();
+    playSound3();
+  } else {
+    console.log("Invalid HP value for healing (Left Player).");
+  }
+
+  if (hpToHeal.includes(currentPlayerHPRight)) {
+    var healedHPRight = currentPlayerHPRight + 2500;
+    hpRightElement.innerHTML = healedHPRight;
+    console.log("Right Player Healed! HP:", healedHPRight);
+    displayImage();
+    playSound3();
+  } else {
+    console.log("Invalid HP value for healing (Right Player).");
+  }
+}
+
+
+
+
+
+
+let leftWinner = "Left Player";
+let rightWinner = "Right Player";
+let leftRemainingHP = 50;
+let rightRemainingHP = 50;
+
+function restartGame() {
+    // Save the winners and remaining HP
+    let savedLeftWinner = leftWinner;
+    let savedRightWinner = rightWinner;
+    let savedLeftRemainingHP = leftRemainingHP;
+    let savedRightRemainingHP = rightRemainingHP;
+
+    // Reset the game
+    // Add your game reset logic here
+
+    // Set the saved winners and remaining HP back
+    leftWinner = savedLeftWinner;
+    rightWinner = savedRightWinner;
+    leftRemainingHP = savedLeftRemainingHP;
+    rightRemainingHP = savedRightRemainingHP;
+
+    console.log("Game restarted. Left Winner: " + leftWinner + ", Left Remaining HP: " + leftRemainingHP + ", Right Winner: " + rightWinner + ", Right Remaining HP: " + rightRemainingHP);
+}
+
+// Call the restartGame() function whenever you need to restart the game
+
+</script>
+</body>
+</html>
